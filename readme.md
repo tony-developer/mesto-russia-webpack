@@ -10,6 +10,7 @@ ____________
 https://tony-developer.github.io/mesto-russia-webpack
 ______
 ### Установка
+Устанавливаем зависимости командой npm i, далее
 * npm run dev для скрипта developer
 * npm run build для production
 * npm run deploy для размещения на gh-pages
