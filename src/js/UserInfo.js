@@ -1,4 +1,4 @@
-class UserInfo{
+export default class UserInfo{
     constructor(form, userName, userData, api){
         this.userName = userName;
         this.userData = userData;
