@@ -1,4 +1,14 @@
 'use strict';
+import "../pages/index.css"
+
+import CardList from "./CardList"
+import FormValidator from "./FormValidator"
+import Api from "./Api"
+import Card from "./Card"
+import Popup from "./Popup"
+import PopupImage from "./PopupImage"
+import UserInfo from "./UserInfo"
+
 (function() {
 
     const errorMessages = {
@@ -13,13 +23,15 @@
 
     const validEdit = new FormValidator(document.forms.edit, errorMessages)
     const validNew = new FormValidator(document.forms.new, errorMessages)
+    const API_URL = NODE_ENV === 'production' ? 'https://nomoreparties.co' : 'http://nomoreparties.co';
     const apiServer = new Api({
-        baseUrl: 'https://nomoreparties.co/cohort12',
+        baseUrl: `${API_URL}/cohort12`,
         headers: {
             authorization: 'c0ae555e-c51e-4a02-ac33-fcd4cc7f259e',
             'Content-type': 'application/json'
         }
     })
+
     const userInfo = new UserInfo(document.forms.edit, document.querySelector('.user-info__name'),
         document.querySelector('.user-info__job'), apiServer)
     const cardList =
